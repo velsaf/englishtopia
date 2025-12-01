@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EnglishTopia - Языковой лагерь с ролевым погружением</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/logo.png">
+</head>
+<body>
+    <!-- Чат-бот FAQ -->
+    <div class="chat-bot-wrapper">
+        <div class="chat-bot" id="chatBot">
+            <div class="chat-bot-header">
+                <i class="bi bi-chat-dots me-2"></i>
+                <span>Частые вопросы</span>
+                <button class="chat-bot-close" id="closeChatBot">×</button>
+            </div>
+            <div class="chat-bot-body" id="chatBotBody">
+                <!-- Вопросы будут загружены через JS -->
+                <div class="text-center p-4">
+                    <div class="loader small-loader"></div>
+                    <p class="mt-2">Загрузка вопросов...</p>
+                </div>
+            </div>
+        </div>
+        <button class="chat-bot-toggle" id="openChatBot">
+            <i class="bi bi-question-circle"></i>
+        </button>
+    </div>
+
+    <!-- Хеддер -->
+    <header class="header-fixed">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <div class="logo-wrapper d-flex align-items-center">
+                    <!-- Наш логотип -->
+                    <img src="assets/logo.png" alt="EnglishTopia Logo" class="header-logo">
+                    <div class="logo-text ms-3">
+                        <span id="campName">EnglishTopia</span>
+                    </div>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active fw-bold text-englishtopia" href="#home">Главная</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-englishtopia" href="#whyus">Почему мы</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-englishtopia" href="#activities">Активности</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-englishtopia" href="#reviews">Отзывы</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-englishtopia" href="#contact">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Герой секция -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 fade-in">
+                    <h1 class="hero-title" id="campTagline">Языковой лагерь с ролевым погружением</h1>
+                    <p class="hero-subtitle" id="campSubtitle">Английский. Без стресса. С заботой.</p>
+                    <div class="next-session" id="nextSession">Следующая смена: 8–11 января</div>
+                    <p class="hero-description" id="campDescription">Загрузка описания...</p>
+                    <a href="#contact" class="btn btn-lg pastel-orange text-englishtopia fw-bold pulse orange-gradient-btn">Записаться сейчас</a>
+                </div>
+                <div class="col-lg-6 fade-in">
+                    <div class="carousel-container mt-5 mt-lg-0">
+                        <div id="campCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#campCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#campCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#campCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner" id="carouselItems">
+                                <!-- Карусель будет заполнена через JS -->
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#campCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Предыдущий</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#campCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Следующий</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Почему выбирают нас -->
+    <section id="whyus" class="py-5 pastel-bg">
+        <div class="container py-5">
+            <h2 class="section-title fade-in">Почему выбирают нас?</h2>
+            <div class="row mt-4" id="whyUsContainer">
+                <!-- Карточки будут загружены через JS -->
+                <div class="col-12 text-center">
+                    <div class="loader"></div>
+                    <p>Загрузка информации...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Активности -->
+    <section id="activities" class="py-5">
+        <div class="container py-5">
+            <h2 class="section-title text-center center fade-in">Наши активности</h2>
+            <p class="text-center fs-5 text-englishtopia-light mb-5 fade-in">Каждый день в EnglishTopia наполнен увлекательными мероприятиями на английском языке</p>
+
+            <div class="row" id="activitiesContainer">
+                <!-- Карточки будут загружены через JS -->
+                <div class="col-12 text-center">
+                    <div class="loader"></div>
+                    <p>Загрузка активностей...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section id="reviews" class="py-5 pastel-bg">
+        <div class="container py-5">
+            <h2 class="section-title fade-in">Отзывы родителей</h2>
+
+            <div class="row" id="reviewsContainer">
+                <!-- Отзывы будут загружены через JS -->
+                <div class="col-12 text-center">
+                    <div class="loader"></div>
+                    <p>Загрузка отзывов...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contact" class="py-5">
+        <div class="container py-5">
+            <h2 class="section-title fade-in">Контакты</h2>
+
+            <div class="row mt-4">
+                <div class="col-md-6 mb-5 fade-in">
+                    <h3 class="mb-4">Телефоны для связи</h3>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="pastel-orange rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 60px; height: 60px;">
+                            <i class="bi bi-telephone fs-4 text-englishtopia"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-0" id="phone1">+7 (950) 763-47-34</h5>
+                            <p class="text-englishtopia-light mb-0">Основной номер</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="pastel-orange rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 60px; height: 60px;">
+                            <i class="bi bi-telephone fs-4 text-englishtopia"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-0" id="phone2">+7 (950) 779-72-86</h5>
+                            <p class="text-englishtopia-light mb-0">Дополнительный номер</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="pastel-orange rounded-circle d-inline-flex align-items-center justify-content-center me-3" style="width: 60px; height: 60px;">
+                            <i class="bi bi-geo-alt fs-4 text-englishtopia"></i>
+                        </div>
+                        <div class="d-inline-block">
+                            <h5>Адрес</h5>
+                            <p id="address">Московская область, Истринский район, детский центр "Солнечный"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 fade-in">
+                    <h3 class="mb-4">Напишите нам</h3>
+                    <div class="d-flex mb-4">
+                        <a href="#" class="social-icon me-3 orange-social" id="vkLink">
+                            <i class="bi bi-vimeo"></i>
+                        </a>
+                        <a href="#" class="social-icon me-3 orange-social" id="whatsappLink">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-icon orange-social" id="telegramLink">
+                            <i class="bi bi-telegram"></i>
+                        </a>
+                    </div>
+                    <p class="mt-3" id="socialText">VK: englishtopia<br>Telegram: EnglishTopiaproject</p>
+                    <p id="email">Email: info@englishtopia.ru</p>
+
+                    <div class="mt-4">
+                        <h5 class="mb-3">Быстрые действия</h5>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="tel:+79507634734" class="btn pastel-orange text-englishtopia fw-bold orange-gradient-btn">
+                                <i class="bi bi-telephone me-2"></i>Позвонить
+                            </a>
+                            <a href="https://wa.me/79507634734" class="btn pastel-orange text-englishtopia fw-bold orange-gradient-btn" target="_blank">
+                                <i class="bi bi-whatsapp me-2"></i>WhatsApp
+                            </a>
+                            <a href="https://t.me/EnglishTopiaproject" class="btn pastel-orange text-englishtopia fw-bold orange-gradient-btn" target="_blank">
+                                <i class="bi bi-telegram me-2"></i>Telegram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <div class="d-flex align-items-center">
+                        <img src="assets/logo.png" alt="EnglishTopia Logo" class="footer-logo me-3">
+                        <div>
+                            <div class="logo-text text-white">
+                                <span>EnglishTopia</span>
+                            </div>
+                            <p class="mb-0 mt-2 small">Языковой лагерь с ролевым погружением</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="social-icon orange-social" id="footerVkLink">
+                        <i class="bi bi-vimeo"></i>
+                    </a>
+                    <a href="#" class="social-icon orange-social" id="footerWhatsappLink">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+                    <a href="#" class="social-icon orange-social" id="footerTelegramLink">
+                        <i class="bi bi-telegram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS и Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
